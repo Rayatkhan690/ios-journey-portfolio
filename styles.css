@@ -162,8 +162,8 @@ p {
 h1 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2.6rem, 8vw, 5.7rem);
-  line-height: 0.96;
+  font-size: clamp(2.45rem, 6.6vw, 5rem);
+  line-height: 1;
 }
 
 h2 {
@@ -358,20 +358,24 @@ h3 {
   line-height: 1.7;
 }
 
-.project-grid {
+.project-grid,
+.about-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
 .project-card,
+.about-card,
 .timeline-item,
 .skill-panel,
-.contact-box {
+.contact-box,
+.experience-card {
   border-radius: 8px;
 }
 
-.project-card {
+.project-card,
+.about-card {
   padding: 24px;
 }
 
@@ -389,6 +393,7 @@ h3 {
 }
 
 .project-card p,
+.about-card p,
 .timeline-item p,
 .contact-box p {
   color: var(--muted);
@@ -415,6 +420,62 @@ h3 {
 .project-card a {
   color: var(--accent);
   font-weight: 800;
+}
+
+.project-meta,
+.date {
+  display: inline-flex;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.experience-list {
+  display: grid;
+  gap: 16px;
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: 26px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.experience-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.experience-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.skill-cloud-section {
+  padding-top: 0;
+}
+
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-cloud span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 11px 14px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+  background: var(--surface);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
 }
 
 .split {
@@ -553,8 +614,13 @@ h3 {
   }
 
   .project-grid,
+  .about-grid,
   .timeline,
   .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
     grid-template-columns: 1fr;
   }
 
