@@ -122,22 +122,22 @@ a {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.nav-links a.nav-resume {
+.nav .nav-links a.nav-resume {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   color: #111113;
-  border: 1px solid rgba(247, 185, 85, 0.58);
+  border: 1px solid #f7b955;
   border-radius: 8px;
-  padding: 9px 12px;
-  background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
-  box-shadow: 0 12px 26px rgba(67, 217, 189, 0.2);
+  padding: 10px 14px;
+  background: #f7b955;
+  box-shadow: 0 12px 28px rgba(247, 185, 85, 0.24);
 }
 
-.nav-links a.nav-resume:hover {
+.nav .nav-links a.nav-resume:hover {
   color: #111113;
-  border-color: rgba(247, 185, 85, 0.82);
-  background: linear-gradient(135deg, #ffd072, #58f0d5);
+  border-color: #43d9bd;
+  background: #43d9bd;
 }
 
 .theme-toggle,
@@ -209,8 +209,8 @@ p {
 h1 {
   max-width: 700px;
   margin: 0;
-  font-size: clamp(2.35rem, 5vw, 4.55rem);
-  line-height: 1;
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
@@ -228,7 +228,8 @@ h3 {
 
 .hero-text {
   max-width: 710px;
-  margin: 24px 0 0;
+  margin: 28px 0 0;
+  padding-right: 18px;
   color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.8;
@@ -273,7 +274,7 @@ h3 {
   color: #111113;
   border: 1px solid rgba(17, 17, 19, 0.18);
   border-radius: 50%;
-  background: rgba(17, 17, 19, 0.12);
+  background: rgba(17, 17, 19, 0.14);
   font-size: 0.9rem;
 }
 
@@ -946,7 +947,11 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.25rem, 11vw, 3.25rem);
+    font-size: clamp(1.85rem, 8.5vw, 2.65rem);
+  }
+
+  .hero-text {
+    padding-right: 0;
   }
 
   .hero-actions,
