@@ -3,6 +3,7 @@ const navLinks = document.querySelector(".nav-links");
 const themeToggle = document.querySelector(".theme-toggle");
 const year = document.querySelector("#year");
 const revealItems = document.querySelectorAll(".reveal");
+const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 year.textContent = new Date().getFullYear();
 
@@ -31,16 +32,38 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.16 }
-);
+const setRevealDelays = () => {
+  const groups = [
+    ".about-grid",
+    ".project-grid",
+    ".experience-list",
+    ".timeline",
+    ".contact-links",
+  ];
 
-revealItems.forEach((item) => observer.observe(item));
+  groups.forEach((selector) => {
+    document.querySelectorAll(`${selector} .reveal`).forEach((item, index) => {
+      item.style.setProperty("--reveal-delay", `${Math.min(index * 90, 360)}ms`);
+    });
+  });
+};
+
+setRevealDelays();
+
+if (motionQuery.matches) {
+  revealItems.forEach((item) => item.classList.add("visible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.14 }
+  );
+
+  revealItems.forEach((item) => observer.observe(item));
+}
