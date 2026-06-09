@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iOS developer portfolio built with HTML, CSS, and JavaScript.">
+  <title>Rayat Khan | iOS Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-mark">RK</span>
+        <span>Rayat Khan</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">SwiftUI • Firebase • REST APIs • MVVM</p>
+        <h1>iOS Developer building clean, practical mobile apps.</h1>
+        <p class="hero-text">
+          I turn ideas into polished iPhone experiences using Swift, SwiftUI, UIKit basics,
+          Firebase, local storage, and API integrations.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn secondary" href="#contact">Hire Me</a>
+        </div>
+        <div class="stats" aria-label="Portfolio highlights">
+          <div>
+            <strong>5+</strong>
+            <span>iOS projects</span>
+          </div>
+          <div>
+            <strong>SwiftUI</strong>
+            <span>Main stack</span>
+          </div>
+          <div>
+            <strong>MVVM</strong>
+            <span>Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-stage reveal">
+        <div class="phone">
+          <div class="phone-bar"></div>
+          <div class="app-screen">
+            <div class="screen-top">
+              <span class="status-dot"></span>
+              <span>Today</span>
+            </div>
+            <h2>Build Log</h2>
+            <div class="task done">
+              <span></span>
+              Weather API
+            </div>
+            <div class="task done">
+              <span></span>
+              Firebase Auth
+            </div>
+            <div class="task active">
+              <span></span>
+              Portfolio polish
+            </div>
+            <div class="mini-chart">
+              <i style="height: 48%"></i>
+              <i style="height: 72%"></i>
+              <i style="height: 56%"></i>
+              <i style="height: 86%"></i>
+              <i style="height: 64%"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Featured work</p>
+        <h2>Projects that show real iOS skills</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-icon">☁</div>
+          <h3>Weather Now</h3>
+          <p>SwiftUI weather app with API integration, async loading states, city search, and clean error handling.</p>
+          <div class="tags">
+            <span>SwiftUI</span>
+            <span>REST API</span>
+            <span>MVVM</span>
+          </div>
+          <a href="#" aria-label="Open Weather Now GitHub repository">GitHub repo</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">₨</div>
+          <h3>Expense Tracker</h3>
+          <p>Personal finance app with categories, monthly summaries, chart views, and local persistence.</p>
+          <div class="tags">
+            <span>SwiftData</span>
+            <span>Charts</span>
+            <span>Dark Mode</span>
+          </div>
+          <a href="#" aria-label="Open Expense Tracker GitHub repository">GitHub repo</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">✦</div>
+          <h3>Food Ordering App</h3>
+          <p>Menu, cart, checkout flow, favorites, Firebase backend, and reusable UI components.</p>
+          <div class="tags">
+            <span>Firebase</span>
+            <span>Auth</span>
+            <span>Firestore</span>
+          </div>
+          <a href="#" aria-label="Open Food Ordering App GitHub repository">GitHub repo</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Toolkit</p>
+        <h2>Skills I use to ship apps</h2>
+        <p>Focused on readable code, smooth interfaces, and features that feel complete on real devices.</p>
+      </div>
+      <div class="skill-panel reveal">
+        <div class="skill-row">
+          <span>Swift / SwiftUI</span>
+          <strong>90%</strong>
+        </div>
+        <div class="progress"><i style="width: 90%"></i></div>
+        <div class="skill-row">
+          <span>Firebase</span>
+          <strong>78%</strong>
+        </div>
+        <div class="progress"><i style="width: 78%"></i></div>
+        <div class="skill-row">
+          <span>REST APIs</span>
+          <strong>84%</strong>
+        </div>
+        <div class="progress"><i style="width: 84%"></i></div>
+        <div class="skill-row">
+          <span>MVVM Architecture</span>
+          <strong>82%</strong>
+        </div>
+        <div class="progress"><i style="width: 82%"></i></div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="section-heading reveal">
+        <p class="eyebrow">My path</p>
+        <h2>iOS journey timeline</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span>01</span>
+          <h3>Swift fundamentals</h3>
+          <p>Variables, functions, optionals, structs, classes, protocols, and clean problem solving.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span>02</span>
+          <h3>SwiftUI interfaces</h3>
+          <p>Responsive layouts, navigation, forms, reusable components, and dark mode support.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span>03</span>
+          <h3>APIs and data</h3>
+          <p>JSON parsing, async/await, loading states, Core Data/SwiftData, and app state management.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span>04</span>
+          <h3>Production polish</h3>
+          <p>Firebase features, MVVM architecture, testing basics, screenshots, README files, and demos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-box reveal">
+        <p class="eyebrow">Available for work</p>
+        <h2>Let us build an iOS app that feels sharp and reliable.</h2>
+        <p>Update these links with your real email, GitHub, and LinkedIn before publishing.</p>
+        <div class="contact-links">
+          <a class="btn primary" href="mailto:your-email@example.com">Email Me</a>
+          <a class="btn secondary" href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn secondary" href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Rayat Khan. Built with HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
