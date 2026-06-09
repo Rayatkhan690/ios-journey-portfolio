@@ -284,9 +284,75 @@ h3 {
   font-size: 0.86rem;
 }
 
-.phone-stage {
+.phone-stage,
+.portrait-stage {
   display: flex;
   justify-content: center;
+}
+
+.portrait-card {
+  width: min(470px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent),
+    rgba(19, 20, 24, 0.88);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 0.78;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.portrait-frame::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(13, 13, 15, 0.72)),
+    radial-gradient(circle at 75% 10%, rgba(240, 81, 56, 0.16), transparent 30%);
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.portrait-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.portrait-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.portrait-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: right;
 }
 
 .phone {
@@ -730,5 +796,18 @@ h3 {
 
   .phone {
     max-width: 100%;
+  }
+
+  .portrait-card {
+    width: 100%;
+  }
+
+  .portrait-info {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portrait-info p {
+    text-align: left;
   }
 }
