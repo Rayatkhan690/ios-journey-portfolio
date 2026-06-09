@@ -27,11 +27,13 @@ body.dark {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 27rem),
@@ -159,9 +161,9 @@ a {
 .hero {
   min-height: calc(100vh - 84px);
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.95fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
   align-items: center;
-  gap: 42px;
+  gap: 34px;
   padding: 72px 0 84px;
 }
 
@@ -187,10 +189,10 @@ p {
 }
 
 h1 {
-  max-width: 820px;
+  max-width: 700px;
   margin: 0;
-  font-size: clamp(3rem, 7.2vw, 6.4rem);
-  line-height: 0.94;
+  font-size: clamp(2.35rem, 5vw, 4.55rem);
+  line-height: 1;
   letter-spacing: 0;
 }
 
@@ -288,10 +290,11 @@ h3 {
 .portrait-stage {
   display: flex;
   justify-content: center;
+  min-width: 0;
 }
 
 .portrait-card {
-  width: min(470px, 100%);
+  width: min(320px, 100%);
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 14px;
@@ -304,7 +307,7 @@ h3 {
 .portrait-frame {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 0.78;
+  height: clamp(330px, 48vh, 390px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.055);
@@ -325,7 +328,7 @@ h3 {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 18%;
 }
 
 .portrait-info {
@@ -490,7 +493,7 @@ h3 {
 }
 
 .project-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .project-card,
@@ -510,9 +513,27 @@ h3 {
 .project-card {
   position: relative;
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 22px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: flex-start;
+  gap: 20px;
   overflow: hidden;
+  min-width: 0;
+  min-height: 230px;
+}
+
+.project-content {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.project-content h3 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.project-content p {
+  margin: 14px 0 0;
 }
 
 .project-card::after {
@@ -537,6 +558,8 @@ h3 {
   font-size: 1.35rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
+  position: relative;
+  z-index: 1;
 }
 
 .project-card p,
@@ -551,7 +574,8 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 20px 0 16px;
+  margin: 18px 0 14px;
+  min-width: 0;
 }
 
 .tags span,
@@ -562,6 +586,8 @@ h3 {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
   background: rgba(255, 255, 255, 0.055);
 }
 
@@ -715,6 +741,7 @@ h3 {
   }
 
   .about-grid,
+  .project-grid,
   .timeline,
   .stats {
     grid-template-columns: 1fr;
@@ -763,6 +790,11 @@ h3 {
 
   .project-card {
     grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .project-icon {
+    margin-bottom: 2px;
   }
 }
 
@@ -774,7 +806,7 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.5rem, 14vw, 4rem);
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
   }
 
   .hero-actions,
@@ -799,7 +831,12 @@ h3 {
   }
 
   .portrait-card {
-    width: 100%;
+    width: min(100%, 300px);
+    justify-self: center;
+  }
+
+  .portrait-frame {
+    height: 330px;
   }
 
   .portrait-info {
