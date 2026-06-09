@@ -122,22 +122,22 @@ a {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.nav-links .nav-resume {
+.nav-links a.nav-resume {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--text);
-  border: 1px solid rgba(67, 217, 189, 0.42);
+  color: #111113;
+  border: 1px solid rgba(247, 185, 85, 0.58);
   border-radius: 8px;
   padding: 9px 12px;
-  background: linear-gradient(135deg, rgba(247, 185, 85, 0.22), rgba(67, 217, 189, 0.18));
-  box-shadow: 0 10px 24px rgba(67, 217, 189, 0.1);
+  background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
+  box-shadow: 0 12px 26px rgba(67, 217, 189, 0.2);
 }
 
-.nav-links .nav-resume:hover {
-  color: var(--text);
-  border-color: rgba(67, 217, 189, 0.62);
-  background: linear-gradient(135deg, rgba(247, 185, 85, 0.3), rgba(67, 217, 189, 0.24));
+.nav-links a.nav-resume:hover {
+  color: #111113;
+  border-color: rgba(247, 185, 85, 0.82);
+  background: linear-gradient(135deg, #ffd072, #58f0d5);
 }
 
 .theme-toggle,
@@ -270,10 +270,10 @@ h3 {
 .nav-resume .download-arrow {
   width: 22px;
   height: 22px;
-  color: var(--text);
-  border: 1px solid var(--line);
+  color: #111113;
+  border: 1px solid rgba(17, 17, 19, 0.18);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(17, 17, 19, 0.12);
   font-size: 0.9rem;
 }
 
