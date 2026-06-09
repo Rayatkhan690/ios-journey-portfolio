@@ -260,6 +260,7 @@ h3 {
 .about-card,
 .timeline-item,
 .contact-box,
+.resume-card,
 .experience-card {
   border: 1px solid var(--line);
   background: var(--surface);
@@ -501,6 +502,7 @@ h3 {
 .timeline-item,
 .skill-panel,
 .contact-box,
+.resume-card,
 .experience-card {
   border-radius: 8px;
 }
@@ -508,6 +510,101 @@ h3 {
 .project-card,
 .about-card {
   padding: 24px;
+}
+
+.resume-section {
+  padding-top: 0;
+}
+
+.resume-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.38fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+  padding: 26px;
+}
+
+.resume-preview {
+  min-height: 250px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent),
+    rgba(255, 255, 255, 0.045);
+}
+
+.resume-page {
+  width: min(160px, 72%);
+  aspect-ratio: 0.72;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 6px;
+  padding: 18px;
+  color: #15171c;
+  background: #f7f9fc;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.3);
+}
+
+.resume-page span {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+}
+
+.resume-page strong,
+.resume-page em {
+  display: block;
+  font-style: normal;
+  line-height: 1;
+}
+
+.resume-page strong {
+  margin-top: 4px;
+  font-size: 0.92rem;
+}
+
+.resume-page em {
+  color: #f05138;
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.resume-page i,
+.resume-page small {
+  display: block;
+  border-radius: 99px;
+  background: #dbe3ec;
+}
+
+.resume-page i {
+  height: 7px;
+}
+
+.resume-page small {
+  width: 72%;
+  height: 6px;
+}
+
+.resume-content p {
+  max-width: 680px;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.resume-content h3 {
+  margin-top: 8px;
+  font-size: 1.6rem;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
 }
 
 .project-card {
@@ -736,7 +833,8 @@ h3 {
 
 @media (max-width: 960px) {
   .hero,
-  .split {
+  .split,
+  .resume-card {
     grid-template-columns: 1fr;
   }
 
@@ -810,7 +908,8 @@ h3 {
   }
 
   .hero-actions,
-  .contact-links {
+  .contact-links,
+  .resume-actions {
     flex-direction: column;
   }
 
@@ -822,8 +921,13 @@ h3 {
   .about-card,
   .timeline-item,
   .skill-panel,
+  .resume-card,
   .experience-card {
     padding: 20px;
+  }
+
+  .resume-preview {
+    min-height: 210px;
   }
 
   .phone {
