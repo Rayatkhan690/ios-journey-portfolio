@@ -90,49 +90,81 @@ a {
 }
 
 .brand {
-  gap: 12px;
+  gap: 14px;
   font-weight: 800;
 }
 
 .brand-mark {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  color: #111113;
+  overflow: hidden;
+  border: 1px solid rgba(67, 217, 189, 0.44);
+  border-radius: 14px;
+  color: #ffffff;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.48), transparent 44%),
-    linear-gradient(135deg, var(--accent-3), var(--accent-2));
-  box-shadow: 0 14px 30px rgba(67, 217, 189, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.42);
-  font-size: 0.96rem;
+    linear-gradient(135deg, rgba(247, 185, 85, 0.2), transparent 42%),
+    linear-gradient(145deg, #191b20 0%, #111113 55%, #243530 100%);
+  box-shadow: 0 16px 34px rgba(67, 217, 189, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.13);
+  font-size: 1.12rem;
   font-weight: 900;
   letter-spacing: 0;
 }
 
+.brand-mark::before {
+  position: absolute;
+  inset: 8px auto 8px 50%;
+  width: 2px;
+  content: "";
+  background: var(--accent);
+  transform: rotate(18deg);
+}
+
 .brand-mark::after {
   position: absolute;
-  right: -4px;
-  bottom: -4px;
-  width: 16px;
-  height: 16px;
+  right: 7px;
+  bottom: 7px;
+  width: 8px;
+  height: 8px;
   content: "";
-  border: 3px solid rgba(16, 17, 20, 0.96);
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-2);
+  box-shadow: 0 0 0 5px rgba(67, 217, 189, 0.13);
+}
+
+.brand-mark span {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-mark span:first-child {
+  color: var(--accent-3);
 }
 
 .brand-name {
-  font-size: 1.18rem;
+  position: relative;
+  display: inline-flex;
+  padding-bottom: 5px;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 900;
   line-height: 1;
   letter-spacing: 0;
-  background: linear-gradient(135deg, #ffffff, #ffcf73 44%, #68f0d7);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 10px 28px rgba(67, 217, 189, 0.12);
+  text-shadow: 0 12px 30px rgba(67, 217, 189, 0.18);
+}
+
+.brand-name::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-3), var(--accent-2));
 }
 
 .nav-links {
