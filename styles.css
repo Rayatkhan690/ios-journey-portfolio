@@ -599,6 +599,10 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.project-grid:has(.app-store-project) {
+  grid-template-columns: 1fr;
+}
+
 .project-card,
 .about-card,
 .timeline-item,
@@ -721,9 +725,9 @@ h3 {
 }
 
 .project-card.app-store-project {
-  grid-template-columns: minmax(132px, 0.36fr) minmax(0, 1fr);
-  min-height: 320px;
-  gap: 22px;
+  grid-template-columns: 1fr;
+  min-height: auto;
+  gap: 0;
 }
 
 .project-media {
@@ -778,9 +782,26 @@ h3 {
   line-height: 1.2;
 }
 
+.project-header {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.project-app-icon {
+  width: 64px;
+  height: 64px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
 .project-title-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 14px;
 }
@@ -807,6 +828,29 @@ h3 {
 
 .project-content p {
   margin: 14px 0 0;
+}
+
+.screenshot-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(120px, 150px);
+  gap: 12px;
+  margin-top: 18px;
+  padding: 4px 2px 12px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.screenshot-strip img {
+  width: 100%;
+  aspect-ratio: 9 / 19.5;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  background: #111113;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
 }
 
 .project-footer {
